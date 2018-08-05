@@ -1,0 +1,11 @@
+export const MODIFICA_EMAIL = 'modifica_email';
+export const MODIFICA_SENHA = 'modifica_senha';
+export const MODIFICA_NOME ='modifica_nome';
+export const ERRO_DE_CADASTRO ='erro_de_cadastro';
+export const CADASTRO_COM_SUCESSO ='cadastro_com_sucesso';
+export const LOGIN_EFETUADO_COM_ERRO ='login_efetuado_com_erro';
+export const LOGIN_EFETUADO_COM_SUCESSO = 'login_efetuado_com_sucesso';
+export const LOGIN_ESTA_CARREGANDO = 'login_esta_carregando';
+export const CADASTRO_ESTA_CARREGANDO = 'cadastro_esta_carregando';
+export const ADICIONANDO_CONTATOS_COM_SUCESSO = 'adicionando_contatos_com_sucesso';
+export const MODIFICA_EMAIL_CONTATO_ADICIONADO = 'modifica_email_contato_adicionado';
