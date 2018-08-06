@@ -8,7 +8,7 @@ import React from 'react';
         return(
             <ImageBackground 
             style={styles.container} 
-                    source={require('../imgs/13.jpg')} >
+                    source={require('../imgs/12.jpg')} >
                     
                      
         <Container>

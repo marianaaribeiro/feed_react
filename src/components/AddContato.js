@@ -31,7 +31,7 @@ import {
         return(
             <ImageBackground 
             style={styles.container} 
-                    source={require('../imgs/1.jpg')} >
+                    source={require('../imgs/3.jpg')} >
                     
                      
         <Container>

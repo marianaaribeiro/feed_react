@@ -42,7 +42,7 @@ class Login extends Component {
     return (
         <ImageBackground style={{ flex: 1,
                                  width: null }} 
-                         source={require('../imgs/1.jpg')}>
+                         source={require('../imgs/3.jpg')}>
 
             <View style={{ flex: 1,
                            padding: 30 }}>

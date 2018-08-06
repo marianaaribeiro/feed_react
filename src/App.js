@@ -12,12 +12,12 @@ class App extends Component {
     componentWillMount() {
 
         firebase.initializeApp({
-            apiKey: "AIzaSyDzd202yVkJZRCpbIoi_I97xTHzLUsuk0g",
-            authDomain: "app5-a6056.firebaseapp.com",
-            databaseURL: "https://app5-a6056.firebaseio.com",
-            projectId: "app5-a6056",
-            storageBucket: "app5-a6056.appspot.com",
-            messagingSenderId: "695695121469"
+            apiKey: "AIzaSyBXflwRMl3jPTz5AKgN83Ap_F-xO5y226U",
+            authDomain: "feed-763cb.firebaseapp.com",
+            databaseURL: "https://feed-763cb.firebaseio.com",
+            projectId: "feed-763cb",
+            storageBucket: "feed-763cb.appspot.com",
+            messagingSenderId: "462240015529"
         });
     }
 
