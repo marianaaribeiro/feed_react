@@ -1,10 +1,7 @@
 import firebase from 'firebase';
 import b64 from 'base-64';
 import _ from 'lodash';
-import { MODIFICA_EMAIL_CONTATO_ADICIONADO,
-   ADICIONANDO_CONTATOS_COM_SUCESSO,
-
-   MODIFICA_O_TITULO,
+import { MODIFICA_O_TITULO,
    CADASTRO_FEED_SUCESSO,
    CADASTRO_FEED_ERRO,
    CADASTRO_ESTA_CARREGANDO,
@@ -12,49 +9,28 @@ import { MODIFICA_EMAIL_CONTATO_ADICIONADO,
    MODIFICAR_DESCRICAO_POST,
    CADASTRO_POST_SUCESSO,
    CADASTRO_POST_ERRO,
-   LISTA_FEED
+   LISTA_FEED,
+   LISTA_POST
    
                                 
  } from './types'
  import { Actions } from 'react-native-router-flux';
 
-
-
-
-
-export const habilitaInclusaoContato = () => (
-    {
-        type: ADICIONANDO_CONTATOS_COM_SUCESSO,
-        payload: false
-    }
-)
-
-export const modificaEmailContatoAdicionado = texto => (
-    {
-        type: MODIFICA_EMAIL_CONTATO_ADICIONADO,
-        payload: texto
-    }
-)
-
-
-
-
-
-export const modificaOTitulo = texto =>(
+export const modificaOTitulo = (texto) =>(
     {
         type: MODIFICA_O_TITULO,
         payload: texto
     }
 )
 
-export const modificaOTituloPost = texto =>(
+export const modificaOTituloPost = (texto) =>(
     {
         type: MODIFICAR_TITULO_POST,
         payload: texto
     }
 )
 
-export const modificaODescricaoPost = texto =>(
+export const modificaODescricaoPost = (texto) =>(
     {
         type: MODIFICAR_DESCRICAO_POST,
         payload: texto
@@ -71,7 +47,7 @@ export const cadastrarFeed = ({titulo}) => {
     
         dispatch({ type: CADASTRO_ESTA_CARREGANDO })
 
-        firebase.database().ref(`/feeds/titulo/`).push({titulo})
+        firebase.database().ref(`feeds/titulo/`).push({titulo})
         .then(user => cadastroFeedSucesso(dispatch))
         .catch(erro => cadastroFeedErro(erro, dispatch));
 
@@ -94,12 +70,12 @@ const cadastroFeedErro = (erro, dispatch) => {
         });
 }
 
-export const cadastrarPost = ({titulo_post, descricao_post }) =>{
+export const cadastrarPost = ({titulo_post, descricao_post, uid }) =>{
     return dispatch => {
     
         dispatch({ type: CADASTRO_ESTA_CARREGANDO })
 
-        firebase.database().ref(`/feeds/titulo/post`).push({titulo_post, descricao_post})
+        firebase.database().ref(`/feeds/titulo/post/`).push({titulo_post, descricao_post})
         .then(user => cadastroPostSucesso(dispatch))
         .catch(erro => cadastroPostErro(erro, dispatch));
   
@@ -122,7 +98,7 @@ const cadastroPostErro = (erro, dispatch) => {
 export const exibirfeed = () =>{
     const { currentUser} = firebase.database();
     return (dispatch) => {
-        firebase.database().ref(`/feeds/titulo`)
+        firebase.database().ref(`/feeds/titulo/`)
         .on("value", snapshot =>{
             dispatch({type: LISTA_FEED, payload: snapshot.val()})
 
@@ -132,9 +108,9 @@ export const exibirfeed = () =>{
 export const exibirpost = () =>{
     const { currentUser} = firebase.database();
     return (dispatch) => {
-        firebase.database().ref(`/feeds/titulo/post`)
+        firebase.database().ref(`/feeds/titulo/post/`)
         .on("value", snapshot =>{
-            dispatch({type: LISTA_FEED, payload: snapshot.val()})
+            dispatch({type: LISTA_POST, payload: snapshot.val()})
 
         })
     }

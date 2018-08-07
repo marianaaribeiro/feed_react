@@ -17,7 +17,7 @@ import { Fab,
          Card,
          CardItem,
          Icon,
-         Left,        
+         Left,   
 } from 'native-base';
 import _ from 'lodash';
 
@@ -93,13 +93,18 @@ class Feed extends Component {
                                 <Content>                        
                                     <Card>
                                         <CardItem header button onPress={() => Actions.DetalheFeed()}>
-                                        <Text style={{ fontSize:20 }}>{data.titulo}</Text>
-                                        </CardItem>                                
-                                        <CardItem footer>
-                                        <Icon name="trash" />
-                                        <Left>
-                                            <Text>Remover</Text>
+                                        <Left style={{alignItems: 'center', justifyContent:'flex-start'}}>
+                                            <Text style={{ fontSize:20 }}>{data.titulo}</Text>
                                         </Left>
+                                        <Text style={{ width: 68, color:'#BF6EA4' }}>Ver Posts</Text>
+                                        <Icon name="arrow-dropright-circle" />                                        
+                                        </CardItem>                                
+                                        <CardItem footer style={{alignItems: 'center',
+                                                                 justifyContent:'center',
+                                                                 backgroundColor: '#BBBBBB',
+                                                                 height: 25}}>
+                                        <Text style={{ width: 80, fontSize: 14 }}>Remover</Text>
+                                        <Icon name="trash" />                           
                                         </CardItem>
                                     </Card>
                                 </Content>

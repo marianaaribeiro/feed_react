@@ -1,14 +1,3 @@
-export const MODIFICA_EMAIL = 'modifica_email';
-export const MODIFICA_SENHA = 'modifica_senha';
-export const MODIFICA_NOME ='modifica_nome';
-export const ERRO_DE_CADASTRO ='erro_de_cadastro';
-export const CADASTRO_COM_SUCESSO ='cadastro_com_sucesso';
-export const LOGIN_EFETUADO_COM_ERRO ='login_efetuado_com_erro';
-export const LOGIN_EFETUADO_COM_SUCESSO = 'login_efetuado_com_sucesso';
-export const LOGIN_ESTA_CARREGANDO = 'login_esta_carregando';
-export const ADICIONANDO_CONTATOS_COM_SUCESSO = 'adicionando_contatos_com_sucesso';
-export const MODIFICA_EMAIL_CONTATO_ADICIONADO = 'modifica_email_contato_adicionado';
-
 export const CADASTRO_ESTA_CARREGANDO = 'cadastro_esta_carregando';
 export const MODIFICA_O_TITULO = 'modifica_o_titulo';
 export const CADASTRO_FEED_SUCESSO = 'cadastroFeedSucesso';
@@ -18,3 +7,4 @@ export const MODIFICAR_DESCRICAO_POST = 'modificando_descricao_post';
 export const CADASTRO_POST_SUCESSO = 'cadastrando_post_com_sucesso';
 export const CADASTRO_POST_ERRO = 'cadastrando_post_com_erro';
 export const LISTA_FEED = 'lista_das_feeds_cadastradas';
+export const LISTA_POST = 'lista_de_posts_que_foram_cadastradas';

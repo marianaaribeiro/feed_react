@@ -50,7 +50,7 @@ class CadastroFeed extends Component {
                     <View style={{ flex: 3, justifyContent: 'center', }}>
                       <View style={{backgroundColor: "#FFD7D7", height: 180, borderRadius:10, justifyContent: 'center', padding:10 }}>
                         <TextInput
-                            value={this.props.nome} 
+                            value={this.props.titulo} 
                             placeholder="Titulo" 
                             placeholderTextColor='#000' 
                             style={{ fontSize: 20, height: 45 }} 

@@ -13,6 +13,7 @@ import {
     modificaODescricaoPost,
 } from '../actions/OutrasActions';
 import _ from 'lodash';
+import { Textarea } from 'native-base';
 
 class CadastrarPost extends Component {
 
@@ -41,38 +42,39 @@ class CadastrarPost extends Component {
         )
     }
      
-
+ 
     render() {  
         
         return (
             <ImageBackground style={{ flex: 1, width: null }} source={require('../imgs/3.jpg')}>
                 <View 
-                    style={{ flex: 1, padding: 10}}>
+                    style={{ flex: 1, padding: 10,marginTop:35, justifyContent: 'center', alignItems:'center'}}>
 
-                    <View style={{ flex: 3, justifyContent: 'center', }}>
-                      <View style={{backgroundColor: "#FFD7D7", height: 180, borderRadius:10, justifyContent: 'center', padding:10 }}>
+                    <View style={{ flex: 1, justifyContent: 'center', position:'absolute', marginTop:30,  }}>
+                      <View style={{backgroundColor: "#FFD7D7", height: 380, width:350, borderRadius:10, justifyContent: 'center', padding:10 }}>
                         <TextInput
-                            value={this.props.nome} 
+                            value={this.props.titulo_post} 
                             placeholder="Titulo" 
                             placeholderTextColor='#000' 
-                            style={{ fontSize: 20, height: 45 }} 
+                            style={{ fontSize: 20, height: 45,marginTop: 20 }} 
                             onChangeText={texto => this.props.modificaOTituloPost(texto)} 
                         />   
-                        <TextInput
-                            value={this.props.nome} 
+                        <Textarea
+                            value={this.props.descricao_post} 
+                            rowSpan={100} bordered
                             placeholder="Descrição" 
                             placeholderTextColor='#000' 
-                            style={{ fontSize: 20, height: 45 }} 
+                            style={{ fontSize: 20, height: 280 }} 
                             onChangeText={texto => this.props.modificaODescricaoPost(texto)} 
                         />                        
                      </View>
-                    
+                     <View style={{ flex: 2, position:'relative', justifyContent: 'flex-end', alignItems:'center', marginTop:40 }}>
+                        {this.renderBtCadastro()}
+                    </View>
                     
 
                     </View>
-                    <View style={{ flex: 1 }}>
-                        {this.renderBtCadastro()}
-                    </View>
+         
                 </View>
             </ImageBackground>
         );

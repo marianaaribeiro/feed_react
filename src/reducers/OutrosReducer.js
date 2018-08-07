@@ -1,6 +1,5 @@
 import { 
-    ADICIONANDO_CONTATOS_COM_SUCESSO,
-    MODIFICA_EMAIL_CONTATO_ADICIONADO,
+    
 
     MODIFICA_O_TITULO,
     CADASTRO_FEED_SUCESSO,
@@ -13,8 +12,7 @@ import {
 } from '../actions/types';
 
 const INITIAL_STATE = {
-    email_contato_adicionado: '',
-    cadastro_resultado_inclusao: false,
+    
 
     carregando_cadastro: false,
     titulo:'',
@@ -27,19 +25,12 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
     
     switch(action.type) {
-        case MODIFICA_EMAIL_CONTATO_ADICIONADO:
-            return { ...state, email_contato_adicionado: action.payload }
-
-        case ADICIONANDO_CONTATOS_COM_SUCESSO:
-            return { ...state, cadastro_resultado_inclusao: action.payload }
-        
-
 
         case MODIFICA_O_TITULO:
             return{ ...state, titulo: action.payload }
         
         case CADASTRO_FEED_SUCESSO:
-            return {...state, carregando_cadastro: false}
+            return {...state,titulo:'', carregando_cadastro: false}
 
         case CADASTRO_FEED_ERRO:
             return { ...state, carregando_cadastro: false }
@@ -54,7 +45,7 @@ export default (state = INITIAL_STATE, action) => {
             return {...state, descricao_post: action.payload}
 
         case CADASTRO_POST_SUCESSO:
-            return {...state, carregando_cadastro: false}
+            return {...state, titulo_post:'', descricao_post:'', carregando_cadastro: false}
 
         case CADASTRO_POST_ERRO:
             return { ...state, carregando_cadastro: false }

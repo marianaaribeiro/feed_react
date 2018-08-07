@@ -1,5 +1,6 @@
 import {
     LISTA_FEED,
+    LISTA_POST,
 
 } from '../actions/types';
 
@@ -14,6 +15,9 @@ export default (state = INITIAL_STATE, action) => {
 
 
         case LISTA_FEED:
+            return action.payload 
+        
+        case  LISTA_POST:
             return action.payload 
        
 

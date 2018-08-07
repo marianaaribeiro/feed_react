@@ -12,13 +12,11 @@ import {
     exibirpost,
 } from '../actions/OutrasActions';
 import { Actions } from 'react-native-router-flux';
-import { Container,
-         Content,
+import { Content,
          Card,
          CardItem,
          Fab,
          Icon,
-         Left,
          Body,
          
 } from 'native-base';
@@ -38,11 +36,14 @@ class DetalheFeed extends Component {
         const ds = new ListView.DataSource( {rowHasChanged: (r1, r2) => r1 !== r2})
         this.fonteDados = ds.cloneWithRows(lista_feed)
     }
+    constructor(props){
+        super(props)
 
-
+    }
     state = {
-        active: 'true'
+        active: 'false'
   }
+  
 
     render() {  
         
@@ -56,7 +57,7 @@ class DetalheFeed extends Component {
                               dataSource={this.fonteDados}
                               renderRow={data =>{
                                 return(
-                                <Content padder  style={{ padding: 40}}>
+                                <Content  style={{ marginTop: 20}}>
                                     <Card>
                                         <CardItem header>
                                         <Text style={{ fontSize:20 }}>{data.titulo_post}</Text>
@@ -66,13 +67,14 @@ class DetalheFeed extends Component {
                                             <Text>
                                             {data.descricao_post}
                                             </Text>
-                                        </Body>
-                                        </CardItem>
-                                        <CardItem footer>
-                                        <Icon name="trash" />
-                                        <Left>
-                                            <Text>Remover</Text>
-                                        </Left>
+                                        </Body>                                        
+                                        </CardItem>                                
+                                        <CardItem footer style={{alignItems: 'center',
+                                                                 justifyContent:'center',
+                                                                 backgroundColor: '#BBBBBB',
+                                                                 height: 25}}>
+                                        <Text style={{ width: 80, fontSize: 14 }}>Remover</Text>
+                                        <Icon name="trash" />                           
                                         </CardItem>
                                     </Card>
                                 </Content>
